@@ -72,6 +72,7 @@ for (let i = 0; i < fotoSlides.length; i++) {
   const htmlFoto = `
     <div class="${nomeClasse}">
       <img src="${img}" alt="">
+      <h1>${titolo}</h1>
     </div>
   `;
 
