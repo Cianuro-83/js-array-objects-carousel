@@ -70,10 +70,13 @@ for (let i = 0; i < fotoSlides.length; i++) {
   }
 
   const htmlFoto = `
-    <div class="${nomeClasse}">
-      <img src="${img}" alt="">
-      <h1>${titolo}</h1>
+  <div class="${nomeClasse}">
+    <img class"selected" src="${img}" alt="">
+    <div class="descrizione text-end">
+      <h2 class="scb-descrizione">${titolo}</h2>
+      <p class="scb-descrizione">${descrizione}</p>
     </div>
+  </div>
   `;
 
   carosello.innerHTML += htmlFoto;
