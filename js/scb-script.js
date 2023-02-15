@@ -4,13 +4,42 @@ console.log("Ciao Cianuro... Oggi l'esercizio è Carosello Array di Oggetti ");
 // CREO ARRAY DI FOTO
 //******************** */
 let foto = [
-  "./img/img1.jpg",
-  "./img/img2.jpg",
-  "./img/img3.jpg",
-  "./img/img4.jpg",
-  "./img/img5.jpg",
+  {
+    titolo: "Seduto sul pontile",
+    descrizione:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat eligendi repellendus, quos aliquam dolore placeat",
+    img: "../img/img1.jpg",
+  },
+  {
+    titolo: "Campanile sul fiume",
+    descrizione:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat eligendi repellendus, quos aliquam dolore placeat",
+    img: "../img/img2.jpg",
+  },
+  {
+    titolo: "Battello sul fiume",
+    descrizione:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat eligendi repellendus, quos aliquam dolore placeat",
+    img: "../img/img3.jpg",
+  },
+  {
+    titolo: "La città riflessa nel fiume",
+    descrizione:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat eligendi repellendus, quos aliquam dolore placeat",
+    img: "../img/img4.jpg",
+  },
+  {
+    titolo: "Finalmente un po' di vacanza",
+    descrizione:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat eligendi repellendus, quos aliquam dolore placeat",
+    img: "../img/img5.jpg",
+  },
 ];
+console.log(foto);
 
+//---------------------------------------------------------------------------
+// INIZIALIZZO LE FUNZIONI
+//---------------------------------------------------------------------------
 let indiceFotoAttuale = 0;
 
 //********************
