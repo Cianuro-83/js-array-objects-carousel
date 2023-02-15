@@ -1,0 +1,39 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+.slide img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  object-position: center;
+}
+
+.slide.selected {
+  display: block;
+}
+
+.slide {
+  display: none;
+}
+
+.carosello {
+  position: relative;
+}
+
+.carosello .freccia-carosello {
+  position: absolute;
+  font-size: 40px;
+  color: white;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carosello .freccia-carosello.freccia-sn {
+  left: 20px;
+}
+
+.carosello .freccia-carosello.freccia-dx {
+  right: 20px;
+}
