@@ -3,7 +3,7 @@ console.log("Ciao Cianuro... Oggi l'esercizio è Carosello Array di Oggetti ");
 //********************
 // CREO ARRAY DI FOTO
 //******************** */
-let foto = [
+let fotoSlides = [
   {
     titolo: "Seduto sul pontile",
     descrizione:
@@ -35,7 +35,7 @@ let foto = [
     img: "../img/img5.jpg",
   },
 ];
-console.log(foto);
+console.log(fotoSlides);
 
 //---------------------------------------------------------------------------
 // INIZIALIZZO LE FUNZIONI
@@ -47,13 +47,22 @@ let indiceFotoAttuale = 0;
 //******************** */
 const carosello = document.getElementById("carosello");
 console.log(carosello);
-
+//********************
+// STAMPO IN CONSOLE LE INFORMAZIONI DI OGNI FOTO
+//******************** */
+for (let Key in fotoSlides) {
+  console.log(fotoSlides[Key]);
+}
 //********************
 // CICLO LE FOTO E LE INSERISCO DINAMICAMENTE NEL DOM
 //******************** */
-for (let i = 0; i < foto.length; i++) {
-  const img = foto[i];
-  console.log(img);
+for (let i = 0; i < fotoSlides.length; i++) {
+  let indiceFotoAttuale = fotoSlides[i];
+  let titolo = fotoSlides.titolo;
+  let descrizione = fotoSlides.descrizione;
+  let img = fotoSlides.img;
+
+  console.log(titolo, descrizione, img);
 
   let nomeClasse = "slide";
   if (i === indiceFotoAttuale) {
