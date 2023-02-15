@@ -8,31 +8,31 @@ let fotoSlides = [
     titolo: "Seduto sul pontile",
     descrizione:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat eligendi repellendus, quos aliquam dolore placeat",
-    img: "../img/img1.jpg",
+    img: "./img/img1.jpg",
   },
   {
     titolo: "Campanile sul fiume",
     descrizione:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat eligendi repellendus, quos aliquam dolore placeat",
-    img: "../img/img2.jpg",
+    img: "./img/img2.jpg",
   },
   {
     titolo: "Battello sul fiume",
     descrizione:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat eligendi repellendus, quos aliquam dolore placeat",
-    img: "../img/img3.jpg",
+    img: "./img/img3.jpg",
   },
   {
     titolo: "La città riflessa nel fiume",
     descrizione:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat eligendi repellendus, quos aliquam dolore placeat",
-    img: "../img/img4.jpg",
+    img: "./img/img4.jpg",
   },
   {
     titolo: "Finalmente un po' di vacanza",
     descrizione:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat eligendi repellendus, quos aliquam dolore placeat",
-    img: "../img/img5.jpg",
+    img: "./img/img5.jpg",
   },
 ];
 console.log(fotoSlides);
@@ -58,15 +58,15 @@ for (let Key in fotoSlides) {
 //******************** */
 for (let i = 0; i < fotoSlides.length; i++) {
   let indiceFotoAttuale = fotoSlides[i];
-  let titolo = fotoSlides.titolo;
-  let descrizione = fotoSlides.descrizione;
-  let img = fotoSlides.img;
+  let titolo = indiceFotoAttuale.titolo;
+  let descrizione = indiceFotoAttuale.descrizione;
+  let img = indiceFotoAttuale.img;
 
   console.log(titolo, descrizione, img);
 
   let nomeClasse = "slide";
   if (i === indiceFotoAttuale) {
-    nomeClasse += " selected";
+    nomeClasse += "selected";
   }
 
   const htmlFoto = `
