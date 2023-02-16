@@ -37,9 +37,6 @@ let fotoSlides = [
 ];
 console.log(fotoSlides);
 
-//---------------------------------------------------------------------------
-// INIZIALIZZO LE FUNZIONI
-//---------------------------------------------------------------------------
 let indiceFotoAttuale = 0;
 
 //********************
@@ -89,37 +86,35 @@ let fotoElements = document.querySelectorAll(".carosello .slide");
 console.log(fotoElements);
 
 //********************
-// RECUPERO FRECCE DAL DOM
+// RECUPERO FRECCE E CONTROLLI PLAYER DAL DOM
 //******************** */
 const frecciaSnElement = document.getElementById("freccia-sn");
 const frecciaDxElement = document.getElementById("freccia-dx");
+const stopElement = document.getElementById("autoplay-stop");
+const autoplayReverseElement = document.getElementById("autoplay-reverse");
+const autoplayElement = document.getElementById("autoplay-normale");
 
-console.log(frecciaSnElement, frecciaDxElement);
-//---------------------------------------------------------------------------
-// INIZIALIZZO LE FUNZIONI
-//---------------------------------------------------------------------------
+console.log(
+  frecciaSnElement,
+  frecciaDxElement,
+  stopElement,
+  autoplayReverseElement,
+  autoplayElement
+);
 
 //********************
 // AUTOPLAY A 3 SECONDI
 //******************** */
 
-const interval = setInterval(function () {
+const autoplay = setInterval(function () {
   const lastIndex = fotoElements.length - 1;
-
-  console.log(fotoElements[indiceFotoAttuale]);
-  fotoElements[indiceFotoAttuale].classList.remove("selected");
-
-  if (indiceFotoAttuale < lastIndex) {
-    indiceFotoAttuale += 1;
-  } else {
-    indiceFotoAttuale = 0;
-  }
-
-  console.log(fotoElements[indiceFotoAttuale]);
-  fotoElements[indiceFotoAttuale].classList.add("selected");
-
+  scorriVersoDx(lastIndex);
   // fine autoplay
 }, 3000);
+stopElement.addEventListener("click", function () {
+  clearInterval(autoplay);
+  console.log("stop Autoplay");
+});
 
 //********************
 // ADD EVENT LISTENER FRECCIA DESTRA
@@ -130,6 +125,55 @@ frecciaDxElement.addEventListener("click", function () {
 
   const lastIndex = fotoElements.length - 1;
 
+  scorriVersoDx(lastIndex);
+});
+//  FINE ADD EVENT LISTENER FRECCIA DESTRA
+
+//********************
+// ADD EVENT LISTENER FRECCIA SINISTRA
+//******************** */
+
+frecciaSnElement.addEventListener("click", function () {
+  console.log("FOTO PRECEDENTE");
+  scorriVersoSn();
+
+  //  FINE ADD EVENT LISTENER FRECCIA SINISTRA
+});
+//********************
+// PLAY IN AVANTI
+//******************** */
+autoplayElement.addEventListener("click", function () {
+  const play = setInterval(function () {
+    const lastIndex = fotoElements.length - 1;
+    scorriVersoDx(lastIndex);
+    console.log("start play");
+    // fine autoplay
+  }, 3000);
+  stopElement.addEventListener("click", function () {
+    clearInterval(play);
+    console.log("stop Autoplay");
+  });
+});
+//********************
+// PLAY REVERSE
+//******************** */
+autoplayReverseElement.addEventListener("click", function () {
+  const playReverse = setInterval(function () {
+    const lastIndex = fotoElements.length - 1;
+    scorriVersoSn();
+    console.log("start play reverve");
+    // fine autoplay
+  }, 3000);
+  stopElement.addEventListener("click", function () {
+    clearInterval(playReverse);
+    console.log("stop Autoplay");
+  });
+});
+//---------------------------------------------------------------------------
+// INIZIALIZZO LE FUNZIONI: SCORRI VERSO DESTRA
+//---------------------------------------------------------------------------
+
+function scorriVersoDx(lastIndex) {
   console.log(fotoElements[indiceFotoAttuale]);
   fotoElements[indiceFotoAttuale].classList.remove("selected");
 
@@ -141,16 +185,15 @@ frecciaDxElement.addEventListener("click", function () {
 
   console.log(fotoElements[indiceFotoAttuale]);
   fotoElements[indiceFotoAttuale].classList.add("selected");
-});
-//  FINE ADD EVENT LISTENER FRECCIA DESTRA
+}
 
-//********************
-// ADD EVENT LISTENER FRECCIA SINISTRA
-//******************** */
+//---------------------------------------------------------------------------
+// INIZIALIZZO LE FUNZIONI: SCORRI VERSO SINISTRA
+//---------------------------------------------------------------------------
 
-frecciaSnElement.addEventListener("click", function () {
-  console.log("FOTO PRECEDENTE");
+scorriVersoSn();
 
+function scorriVersoSn() {
   console.log(fotoElements[indiceFotoAttuale]);
   fotoElements[indiceFotoAttuale].classList.remove("selected");
 
@@ -162,5 +205,4 @@ frecciaSnElement.addEventListener("click", function () {
 
   console.log(fotoElements[indiceFotoAttuale]);
   fotoElements[indiceFotoAttuale].classList.add("selected");
-  //  FINE ADD EVENT LISTENER FRECCIA SINISTRA
-});
+}
