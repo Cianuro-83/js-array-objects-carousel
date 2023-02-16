@@ -95,6 +95,31 @@ const frecciaSnElement = document.getElementById("freccia-sn");
 const frecciaDxElement = document.getElementById("freccia-dx");
 
 console.log(frecciaSnElement, frecciaDxElement);
+//---------------------------------------------------------------------------
+// INIZIALIZZO LE FUNZIONI
+//---------------------------------------------------------------------------
+
+//********************
+// AUTOPLAY A 3 SECONDI
+//******************** */
+
+const interval = setInterval(function () {
+  const lastIndex = fotoElements.length - 1;
+
+  console.log(fotoElements[indiceFotoAttuale]);
+  fotoElements[indiceFotoAttuale].classList.remove("selected");
+
+  if (indiceFotoAttuale < lastIndex) {
+    indiceFotoAttuale += 1;
+  } else {
+    indiceFotoAttuale = 0;
+  }
+
+  console.log(fotoElements[indiceFotoAttuale]);
+  fotoElements[indiceFotoAttuale].classList.add("selected");
+
+  // fine autoplay
+}, 3000);
 
 //********************
 // ADD EVENT LISTENER FRECCIA DESTRA

@@ -1,3 +1,8 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 body {
   background-color: black;
   color: white;
@@ -41,8 +46,8 @@ body {
 .descrizione {
   padding: 10px;
   position: absolute;
-  bottom: 0px;
-  right: 0px;
+  bottom: -22px;
+  right: -10px;
 }
 .scb-descrizione {
   background-color: rgba(255, 245, 196, 0.7);
@@ -59,4 +64,8 @@ h2.scb-descrizione {
   color: blue;
   text-transform: uppercase;
   font-weight: 700;
+}
+.control {
+  display: flex;
+  justify-content: space-between;
 }
