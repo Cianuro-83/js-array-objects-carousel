@@ -28,6 +28,7 @@ body {
   color: white;
   top: 50%;
   transform: translateY(-50%);
+  cursor: pointer;
 }
 
 .carosello .freccia-carosello.freccia-sn {
