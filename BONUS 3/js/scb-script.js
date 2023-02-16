@@ -63,7 +63,7 @@ for (let i = 0; i < fotoSlides.length; i++) {
 
   let nomeClasse = "slide";
   if (i === indiceFotoAttuale) {
-    nomeClasse += "selected";
+    nomeClasse += " selected";
   }
 
   const htmlFoto = `
